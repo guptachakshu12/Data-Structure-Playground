@@ -1,0 +1,42 @@
+.linkedlist-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.list-node-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.list-node {
+  background: #4c9aff;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 15px 25px;
+  text-align: center;
+  min-width: 50px;
+  position: relative;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.list-node.highlight {
+  background: #ff9800;
+  transform: scale(1.1);
+}
+
+.arrow {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.null-node {
+  background: #eee;
+  color: #333;
+  border: 2px dashed #999;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-weight: bold;
+}

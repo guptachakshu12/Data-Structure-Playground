@@ -1,0 +1,16 @@
+.playground-container {
+  flex: 1;
+  padding: 2rem;
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  min-height: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.playground-container:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}

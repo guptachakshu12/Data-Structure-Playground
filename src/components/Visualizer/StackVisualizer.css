@@ -1,0 +1,58 @@
+.stack-container {
+  display: flex;
+  flex-direction: column; /* top element at top now */
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  min-height: 300px;
+  justify-content: flex-start; /* stack grows downward visually (top at top) */
+}
+
+.stack-node {
+  width: 120px;
+  height: 40px;
+  background-color: #4cafef;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  font-weight: bold;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.stack-node.pushed {
+  animation: pushAnim 0.4s ease;
+}
+
+@keyframes pushAnim {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.stack-node.popping {
+  animation: popAnim 0.4s ease forwards;
+}
+
+@keyframes popAnim {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-50px) scale(0.8);
+    opacity: 0;
+  }
+}

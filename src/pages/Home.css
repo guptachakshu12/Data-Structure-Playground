@@ -1,0 +1,57 @@
+/* Home.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-container h1 {
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+
+.home-container p {
+  color: #111827;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.home-buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.home-buttons button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.home-buttons button:hover {
+  background: #f59e0b;
+}
+
+.instructions {
+  text-align: left;
+  max-width: 400px;
+}
+
+.tip-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fff3cd;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: left;
+  color: #856404;
+}

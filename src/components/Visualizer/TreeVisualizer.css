@@ -1,0 +1,130 @@
+/* Layout + controls extend .visualizer-card you already have */
+.tree-visualizer { display: flex; flex-direction: column; gap: 12px; }
+
+/* controls grid */
+.controls.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.controls .group { display: flex; flex-direction: column; gap: 8px; }
+.traversal-controls { display:flex; gap:8px; align-items:center; }
+
+/* tree area */
+.tree-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* node wrapper arranges node above its children */
+.tree-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 60px;
+}
+
+/* children row places left and right children with gap */
+.tree-children {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 32px; /* space for connector lines */
+  position: relative;
+  min-width: 100%;
+}
+
+/* vertical line from parent down */
+.tree-children::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 24px;
+  background: #c1c8d3;
+  z-index: 0;
+}
+
+/* horizontal connectors from that vertical to each child */
+.tree-children > .tree-node-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+  width: 50%;
+  height: 2px;
+  background: #c1c8d3;
+  z-index: 0;
+}
+
+/* node appearance */
+.tree-node {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4f46e5, #10b981);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s;
+}
+
+/* placeholder for empty children */
+.tree-node.empty {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* selection & highlight */
+.tree-node.selected {
+  outline: 4px solid rgba(16,185,129,0.16);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(16,185,129,0.10);
+}
+
+.tree-node.highlight {
+  outline: 4px solid rgba(79,70,229,0.18);
+  transform: scale(1.06);
+  box-shadow: 0 14px 30px rgba(79,70,229,0.10);
+}
+
+/* controls / inputs */
+.controls input[type="number"],
+.controls select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+}
+
+.controls button {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+}
+.controls button:hover { background: #3730a3; }
+
+/* info & small screens */
+.controls .info { font-size: 13px; color:#374151; }
+@media (max-width: 720px) {
+  .controls.grid { grid-template-columns: 1fr; }
+  .tree-children { gap: 12px; margin-top: 20px; }
+}
