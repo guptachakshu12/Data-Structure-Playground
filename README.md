@@ -83,5 +83,4 @@ Images can be added in public/assets/ and referenced directly.
 The application is purely frontend-based; no backend is required.
 
 
-Screenshots
-<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/8208eae3-036c-4968-b857-094e8c2729d4" />
+
